@@ -44,7 +44,7 @@ class Index extends Component {
 
       return { page, posts, pages };
     } catch (err) {
-      if (err.data.status === 403) {
+      if (err.data && err.data.status === 403) {
         tokenExpired();
       }
     }
